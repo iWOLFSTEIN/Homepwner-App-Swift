@@ -15,6 +15,8 @@
 		12FA73BF29E92AD6003D16C0 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA73BE29E92AD6003D16C0 /* ItemsViewController.swift */; };
 		12FA73C129E96BE0003D16C0 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA73C029E96BE0003D16C0 /* ItemStore.swift */; };
 		12FA73C329E96C05003D16C0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA73C229E96C05003D16C0 /* Item.swift */; };
+		12FA73C629ED59E7003D16C0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA73C429ED59E7003D16C0 /* TableViewCell.swift */; };
+		12FA73C729ED59E7003D16C0 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12FA73C529ED59E7003D16C0 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		12FA73BE29E92AD6003D16C0 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		12FA73C029E96BE0003D16C0 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		12FA73C229E96C05003D16C0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		12FA73C429ED59E7003D16C0 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		12FA73C529ED59E7003D16C0 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				12FA73BE29E92AD6003D16C0 /* ItemsViewController.swift */,
 				12FA73C029E96BE0003D16C0 /* ItemStore.swift */,
 				12FA73C229E96C05003D16C0 /* Item.swift */,
+				12FA73C429ED59E7003D16C0 /* TableViewCell.swift */,
+				12FA73C529ED59E7003D16C0 /* TableViewCell.xib */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -132,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12FA73B729E92A60003D16C0 /* LaunchScreen.storyboard in Resources */,
+				12FA73C729ED59E7003D16C0 /* TableViewCell.xib in Resources */,
 				12FA73B429E92A60003D16C0 /* Assets.xcassets in Resources */,
 				12FA73B229E92A5F003D16C0 /* Main.storyboard in Resources */,
 			);
@@ -147,6 +154,7 @@
 				12FA73C329E96C05003D16C0 /* Item.swift in Sources */,
 				12FA73BF29E92AD6003D16C0 /* ItemsViewController.swift in Sources */,
 				12FA73AB29E92A5F003D16C0 /* AppDelegate.swift in Sources */,
+				12FA73C629ED59E7003D16C0 /* TableViewCell.swift in Sources */,
 				12FA73C129E96BE0003D16C0 /* ItemStore.swift in Sources */,
 				12FA73AD29E92A5F003D16C0 /* SceneDelegate.swift in Sources */,
 			);
