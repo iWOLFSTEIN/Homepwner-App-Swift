@@ -22,15 +22,15 @@ class ItemsViewController: UITableViewController {
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         
-        let insets = UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 5)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
+        tableView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        tableView.scrollIndicatorInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 64
 //        tableView.rowHeight = 64
         tableView.tableHeaderView = headerView
-//        tableView.tableHeaderView = tableView.subviews.first!.subviews.first as! UIView
-//        print(tableView.subviews.first?.subviews)
+        
+       
+
 
     }
     
@@ -38,6 +38,28 @@ class ItemsViewController: UITableViewController {
     }
     @IBAction func addItem(_ sender: UIButton) {
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // If the triggered segue is the "showItem" segue
+        switch segue.identifier {
+            case "showItem"?:
+            // Figure out which row was just tapped
+            if let row = tableView.indexPathForSelectedRow?.row {
+            // Get the item associated with this row and pass it along
+//                _ = itemStore.items[row]
+                let detailViewController = segue.destination as! DetailViewController
+//                detailViewController.item = item
+                detailViewController.fixedViewTwo.backgroundColor = .systemPink
+                detailViewController.flexibleViewOne.backgroundColor = .green
+            }
+            default:
+            preconditionFailure("Unexpected segue identifier.")
+        }
+    }
+   
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
@@ -49,15 +71,59 @@ class ItemsViewController: UITableViewController {
         cell.creationDateLabel.text = "Creation Date: " + formatDate(item.dateOfCreation)
         cell.priceLabel.text = String(item.price) + "$"
         
+        cell.layer.cornerRadius = 10
         
         
         
+
+   
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let verticalPadding: CGFloat = 6
+
+            let maskLayer = CALayer()
+            maskLayer.cornerRadius = 10    //if you want round edges
+            maskLayer.backgroundColor = UIColor.black.cgColor
+            maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 0, dy: verticalPadding/2)
+            cell.layer.mask = maskLayer
+    }
+    
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//      return itemStore.items.count
+//    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.items.count
     }
+    // Set the spacing between sections
+//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 0.0
+//        }
+////
+//        // Make the background color show through
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//            let headerView = UIView()
+//            headerView.backgroundColor = UIColor.clear
+//
+//            return headerView
+//        }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//            guard let cell = tableView.cellForRow(at: indexPath) as? TableViewCell else {
+//                return
+//            }
+//            cell.becomeFirstResponder()
+        let destinationVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+               
+               // Pass any necessary data to the destination view controller here
+               // For example:
+               // destinationVC.data = myDataArray[indexPath.row]
+               
+               navigationController?.pushViewController(destinationVC, animated: true)
+        }
+   
 }
 
 func formatDate(_ date: Date) -> String {
