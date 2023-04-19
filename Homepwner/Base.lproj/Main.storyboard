@@ -63,6 +63,12 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zaf-wo-CeK">
+                                                <rect key="frame" x="47" y="282" width="296" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.80392156862745101" green="0.94117647058823528" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -100,6 +106,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tic-mS-Sqy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="oV7-HG-pq8" firstAttribute="leading" secondItem="Tic-mS-Sqy" secondAttribute="leading" id="5fo-Ho-EtG"/>
                             <constraint firstItem="Tic-mS-Sqy" firstAttribute="trailing" secondItem="oV7-HG-pq8" secondAttribute="trailing" id="fMV-qP-zQs"/>
@@ -112,6 +119,7 @@
                         <outlet property="fixedViewTwo" destination="zED-BV-0RI" id="WK7-18-ZUg"/>
                         <outlet property="flexibleViewOne" destination="VPV-qo-v1T" id="Xpc-lA-TmN"/>
                         <outlet property="flexibleViewTwo" destination="7su-JA-sqS" id="JB3-Re-u1y"/>
+                        <outlet property="textField" destination="Zaf-wo-CeK" id="H9C-uJ-JPV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWq-ck-pXJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

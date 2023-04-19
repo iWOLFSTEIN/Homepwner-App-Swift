@@ -34,9 +34,10 @@ class ItemsViewController: UITableViewController {
 
     }
     
-    @IBAction func editItem(_ sender: Any) {
-    }
-    @IBAction func addItem(_ sender: UIButton) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("viewWillAppear method called")
     }
     
     
@@ -45,7 +46,7 @@ class ItemsViewController: UITableViewController {
         switch segue.identifier {
             case "showItem"?:
             // Figure out which row was just tapped
-            if let row = tableView.indexPathForSelectedRow?.row {
+            if (tableView.indexPathForSelectedRow?.row) != nil {
             // Get the item associated with this row and pass it along
 //                _ = itemStore.items[row]
                 let detailViewController = segue.destination as! DetailViewController
@@ -90,39 +91,20 @@ class ItemsViewController: UITableViewController {
             cell.layer.mask = maskLayer
     }
     
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//      return itemStore.items.count
-//    }
+
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.items.count
     }
-    // Set the spacing between sections
-//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 0.0
-//        }
-////
-//        // Make the background color show through
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//            let headerView = UIView()
-//            headerView.backgroundColor = UIColor.clear
-//
-//            return headerView
-//        }
+  
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//            guard let cell = tableView.cellForRow(at: indexPath) as? TableViewCell else {
-//                return
-//            }
-//            cell.becomeFirstResponder()
         let destinationVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-               
-               // Pass any necessary data to the destination view controller here
-               // For example:
-               // destinationVC.data = myDataArray[indexPath.row]
-               
-               navigationController?.pushViewController(destinationVC, animated: true)
+            navigationController?.pushViewController(destinationVC, animated: true)
         }
+    
+    
+    
    
 }
 

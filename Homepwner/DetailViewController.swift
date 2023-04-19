@@ -11,6 +11,8 @@ import UIKit
 
 class DetailViewController: UIViewController{
     
+   
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var flexibleViewTwo: UIView!
     @IBOutlet weak var flexibleViewOne: UIView!
     @IBOutlet weak var fixedViewTwo: UIView!
@@ -23,5 +25,21 @@ class DetailViewController: UIViewController{
         fixedViewOne.backgroundColor = .green
         flexibleViewTwo.backgroundColor = .systemPink
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tapGesture)
+        
+    }
+    
+    
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        print("viewWillDisappear method called")
     }
 }
